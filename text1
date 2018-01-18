@@ -1,0 +1,10 @@
+let convertedPath = '';
+    if(/^-{0,1}\d+$/.test(this.state.versionSelected.cl)){
+      convertedPath = "/root" + this.state.versionSelected.path.substr(1);
+    } else {
+      var arr = this.state.versionSelected.path.split('/');
+      arr.pop();
+      convertedPath = "root/PACKAGE 2.0/" + arr[1] + '.git/PBS';
+    }
+    this.checkQuickBuild(convertedPath, checkQuickBuildData);
+  };
